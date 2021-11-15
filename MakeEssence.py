@@ -20,14 +20,13 @@ for i in range(max_iter):
             flag = True
             break
         except:
+            flag = False
             try:
                 x, y = pyautogui.locateCenterOnScreen('assets/shop.png', confidence=0.8)
                 pyautogui.click(x, y)
                 pyautogui.moveTo(x, y + 100)
                 pyautogui.scroll(-5000)
-                flag = False
             except:
-                flag = False
                 break
 
     if flag:
